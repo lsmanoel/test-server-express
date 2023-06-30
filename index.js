@@ -1,27 +1,30 @@
-const express = require('express');
+const express = require("express");
+const cors = require("cors");
+app.use(cors());
+app.options("*", cors());
 
 const app = express();
 
-app.get('/', (req, res) => res.send('Home Page Route'));
+app.get("/", (req, res) => res.send("Home Page Route"));
 
-app.get('/string', (req, res) => res.send('Essa é uma String'));
+app.get("/string", (req, res) => res.send("Essa é uma String"));
 
-app.get('/json', (req, res) => {
+app.get("/json", (req, res) => {
   res.json({
-    name: 'Sensor 1',
-    model: 'HF+',
+    name: "Sensor 1",
+    model: "HF+",
   });
 });
 
-app.get('/json-array', (req, res) => {
+app.get("/json-array", (req, res) => {
   res.json([
     {
-      name: 'Sensor 1',
-      model: 'HF+',
+      name: "Sensor 1",
+      model: "HF+",
     },
     {
-      name: 'Sensor 2',
-      model: 'TcAs',
+      name: "Sensor 2",
+      model: "TcAs",
     },
   ]);
 });
