@@ -1,10 +1,10 @@
 const express = require("express");
 const cors = require("cors");
-app.use(cors());
-app.options("*", cors());
 
 const app = express();
 
+app.use(cors());
+app.options("*", cors());
 app.get("/", (req, res) => res.send("Home Page Route"));
 
 app.get("/string", (req, res) => res.send("Essa é uma String"));
